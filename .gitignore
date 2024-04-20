@@ -1,0 +1,32 @@
+# Node.js dependencies
+node_modules/
+
+# Express.js generated files
+*.pid
+*.log
+
+# React.js build files
+/build
+/public
+
+# MongoDB files
+*.db
+
+# Environment variables
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+
+# Compiled files
+*.min.js
+*.min.css
+
+# OS generated files
+.DS_Store
+Thumbs.db

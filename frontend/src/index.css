@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #E0115F;
+  --secondary-color: #f2f2f2;
+}
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--secondary-color);
+}
+.navbar h1 {
+  color:  var(--primary-color);
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+  transition: color 0.3s ease;
+}
+.navbar a:hover {
+  color: var(--primary-color); 
+}
+
+.navbar a:active {
+  color: var(--primary-color);
+}
+
+.navbar button{
+  padding: 6px 12px;
+  margin-left: 20px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+/* Navbar */
+
+
+/* Pages */
+.pages{
+  padding: 20px;
+  max-width: 100%;
+  margin: 0px auto;
+
+}
+/* Pages */
+
+
+/* Tracker List */
+.tracker-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+}
+
+.tracker-list h2,p {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.tracker-preview {
+  width: calc(40% - 20px); /* Adjust as needed */
+  padding-left: auto;
+  padding-right: 20px;
+  padding-top: 10px;
+  margin: 20px;
+  border-radius: 15px;
+  border-bottom: 1px solid #fafafa;
+  text-align: center;
+}
+
+.tracker-preview:hover {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tracker-preview a {
+  text-decoration: none;
+  color: #333;
+
+}
+
+.tracker-preview h3 {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .tracker-preview {
+      width: calc(50% + 20px); /* Adjust as needed */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tracker-preview {
+      width: calc(100% - 20px); /* Adjust as needed */
+  }
+}
+/* Tracker List */
+
+
+/* Error Page */
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; 
+}
+
+.error {
+  text-align: center;
+}
+
+.error h1 {
+  font-size: 5rem; /* Adjust the size of the "404" */
+  margin-bottom: 20px;
+}
+
+.error h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.error p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.error a {
+  font-size: 1rem;
+  color: #E0115F;
+  text-decoration: none;
+}
+
+.error a:hover {
+  text-decoration: underline;
+}
+/* Error Page */
+
+
+/* Spinner */
+.spinner {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid #f3f3f3; /* Light gray border */
+  border-top: 4px solid var(--primary-color); /* Blue border on top */
+  animation: spin 1s linear infinite; /* Apply animation */
+  margin: auto;
+  margin-top: 13%;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); } /* Starting point */
+  100% { transform: rotate(360deg); } /* Ending point (full circle) */
+}
+/* Spinner */
+
+
+/* Error */
+
+
+
+/* Error */
