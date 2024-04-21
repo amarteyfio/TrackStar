@@ -118,6 +118,74 @@
 }
 /* Tracker List */
 
+/* Tracker Details */
+.tracker{
+  display: flex;
+}
+
+.tracker-details {
+  padding: 20px;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.tracker-details h2 {
+  margin-bottom: 50px;
+}
+
+.tracker-details h3 {
+  border: 1px solid white;
+  width: 25%;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 100px;
+  border-radius: 20px;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tracker-details button {
+  padding: 6px 12px;
+  margin-left: 10px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tracker .notes{
+  padding: 20px;
+  max-width: 50%;
+  margin: 0 auto;
+  border: 1px solid black;
+  min-width: 25%;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.tracker .notes h2{
+  margin-bottom: 5px;
+}
+
+.tracker .notes button{
+  padding: 6px 12px;
+  margin: 25% 50px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+
+
+
+/* Tracker Details */
+
 
 /* Error Page */
 .error-container {
