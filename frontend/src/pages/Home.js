@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useFetch from "../hooks/useFetch";
 import TrackerList from "../components/TrackerList";
+import TrackerForm from "../components/TrackerForm";
 
 const Home = () => {
     const {data: trackers, isPending, errors} = useFetch('http://localhost:4000/api/trackers/');
@@ -17,6 +18,7 @@ const Home = () => {
             {errors && console.log(errors)}
             {isPending && <div className="spinner"></div>}
             {trackers && <TrackerList trackers={trackers} title="Trackers" />}
+            {trackers && <TrackerForm />}
         </div>
     );
 }

@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const TrackerList = ({ trackers, title }) => {
     return (
         <div className="tracker-list">
-        <h2>{title}</h2>
         {trackers.map((tracker) => {
             // Calculate the number of days since the start date
             const startDate = new Date(tracker.start_date);
@@ -18,6 +17,7 @@ const TrackerList = ({ trackers, title }) => {
                 <Link to={`/trackers/${tracker._id}`}>
                 <h2>{tracker.title}</h2>
                 <h3>{daysSinceStart}</h3>
+                <p>Day(s)</p>
                 <p>Started: {started_at.toDateString()}</p>
                 </Link>
             </div>

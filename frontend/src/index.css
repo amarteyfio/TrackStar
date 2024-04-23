@@ -12,6 +12,30 @@
   color: #333;
 }
 
+.home{
+  display: flex;
+}
+
+/* Pages */
+.pages{
+  padding: 20px;
+  max-width: 100%;
+  margin: 0px auto;
+}
+/* Pages */
+
+
+button {
+  padding: 6px 12px;
+  margin-left: 10px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
 /* Navbar */
 .navbar {
   padding: 20px;
@@ -55,21 +79,14 @@
 /* Navbar */
 
 
-/* Pages */
-.pages{
-  padding: 20px;
-  max-width: 100%;
-  margin: 0px auto;
 
-}
-/* Pages */
 
 
 /* Tracker List */
 .tracker-list {
   display: flex;
   flex-wrap: wrap;
-  width: 75%;
+  width: 60%;
 }
 
 .tracker-list h2,p {
@@ -79,7 +96,7 @@
 }
 
 .tracker-preview {
-  width: calc(40% - 20px); /* Adjust as needed */
+  max-width: 20%; /* Adjust as needed */
   padding-left: auto;
   padding-right: 20px;
   padding-top: 10px;
@@ -87,6 +104,7 @@
   border-radius: 15px;
   border-bottom: 1px solid #fafafa;
   text-align: center;
+  min-width: 20%;
 }
 
 .tracker-preview:hover {
@@ -144,16 +162,7 @@
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
-.tracker-details button {
-  padding: 6px 12px;
-  margin-left: 10px;
-  border: none;
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+
 
 .tracker .notes{
   padding: 20px;
@@ -180,12 +189,48 @@
   transition: background-color 0.3s ease;
 
 }
-
-
-
-
 /* Tracker Details */
 
+/* Form */
+.tracker-form
+{
+  margin-top: 30px;
+  max-width: 25%;
+  margin-left: 50px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+  max-height: 525px;
+}
+
+.tracker-form button {
+  margin-left: 0.5px;
+}
+
+.tracker-form label {
+  width: 100%;
+  margin: 2px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.tracker-form input[type=text], 
+.tracker-form input[type=email], 
+.tracker-form textarea, 
+.tracker-form select,
+.tracker-form input[type=date]
+{
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+/* Form */
 
 /* Error Page */
 .error-container {
