@@ -8,6 +8,7 @@ require('dotenv').config();
 let bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const trackersRoutes = require('./routes/trackers');
+const userRoutes = require('./routes/user');
 
 
 
@@ -32,6 +33,7 @@ app.use((req, res, next) => {
 
 //********Routes ******************//
 app.use('/api/trackers',trackersRoutes);
+app.use('/api/user', userRoutes);
 
 
 app.get('/', (req, res) => {

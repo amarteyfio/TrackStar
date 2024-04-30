@@ -1,22 +1,40 @@
-import { useEffect, useState } from "react";
-import useFetch from "../hooks/useFetch";
+//import useFetch from "../hooks/useFetch";
 import TrackerList from "../components/TrackerList";
 import TrackerForm from "../components/TrackerForm";
+import { useAuthContext } from "../hooks/useAuthContext";
+import { useTrackersContext } from "../hooks/useTrackersContext";
+import { useEffect } from "react";
+
 
 const Home = () => {
-    const {data: trackers, isPending, errors} = useFetch('http://localhost:4000/api/trackers/');
+    const { user } = useAuthContext();
+    //const {data: trackers, isPending, errors} = useFetch('http://localhost:4000/api/trackers/');
+    const {trackers, dispatch} = useTrackersContext();
+
+    useEffect(() => {
+        const fetchTrackers = async () => {
+            const res = await fetch('http://localhost:4000/api/trackers', {
+                headers: {
+                    'Authorization': 'Bearer ' + user.token
+                }
+            });
+            const data = await res.json();
+
+            if(res.ok)
+            {
+                dispatch({type: 'SET_TRACKERS', payload: data})
+            }
+        }
+
+        if(user)
+        {
+            fetchTrackers();
+        }
+
+    },[dispatch, user])
     return (
         <div className="home">
-            {errors &&
-            <div className="error-container">
-            <div className="error">
-                <h1>500</h1>
-                <h2>Oops! Something Went Wrong {":("}</h2>
-                <p>Please Try Again Later</p>
-            </div>
-            </div>}
-            {errors && console.log(errors)}
-            {isPending && <div className="spinner"></div>}
+            {!trackers && <div className="spinner"></div>}
             {trackers && <TrackerList trackers={trackers} title="Trackers" />}
             {trackers && <TrackerForm />}
         </div>

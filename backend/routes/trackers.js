@@ -1,5 +1,4 @@
 const express = require('express');
-const router = express.Router();
 const 
 {
     createTracker,
@@ -9,7 +8,12 @@ const
     updateTracker
 } 
 = require('../controllers/trackerController');
+const requireAuth = require('../middleware/requireAuth');
 
+const router = express.Router();
+
+//require auth
+router.use(requireAuth);
 
 //GET all trackers
 router.get('/', getAllTrackers);

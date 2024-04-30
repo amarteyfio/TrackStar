@@ -1,13 +1,27 @@
+//UNUSED
 import { useState, useEffect } from "react";
+import { useAuthContext } from "./useAuthContext";
 
 const useFetch = (url) => {
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true);
-    const [ errors, setErrors] = useState(null); 
+    const [ errors, setErrors] = useState(null);
+    const { user } = useAuthContext(); 
 
     useEffect(() => {
+        if(!user)
+        {
+            setIsPending(false);
+            setErrors("Unauthenticated Request");
+            return;
+        }
         const abortCont = new AbortController();
-        fetch(url,{signal: abortCont.signal})
+        fetch(url,{
+            headers: {
+                "Authorization": `Bearer ${user.token}`
+            },
+            signal: abortCont.signal
+        })
         .then(res => 
             {
                 if(!res.ok){

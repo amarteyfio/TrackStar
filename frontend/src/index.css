@@ -79,7 +79,52 @@ button {
 /* Navbar */
 
 
+/* Auth */
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh; /* Set height to full viewport height */
+}
 
+.signup form {
+  width: 80%; /* Adjust form width as needed */
+  max-width: 400px; /* Set maximum width for larger screens */
+}
+
+.signup label {
+  margin-bottom: 0.5rem; /* Adjust label spacing */
+}
+
+.signup input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem; /* Adjust input spacing */
+}
+
+.signup button {
+  width: 25%;
+  margin: 1rem 40%; /* Center button */
+  align-items: center;
+  cursor: pointer;
+}
+
+.signup a
+{
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .signup form{
+    width: 90%; /* Adjust form width for smaller screens */
+  }
+}
+/* Auth */
 
 
 /* Tracker List */
@@ -90,7 +135,7 @@ button {
 }
 
 .tracker-list h2,p {
-  width: 100%;
+  max-width: 100%;
   padding: 10px;
   margin-bottom: 5px;
 }
@@ -235,13 +280,14 @@ button {
 /* Error Page */
 .error-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /*justify-content: center;*/
+  /*align-items: center*/
   height: 80vh; 
 }
 
 .error {
-  text-align: center;
+  /*text-align: center;*/
+  padding-left: 20px;
 }
 
 .error h1 {
@@ -252,17 +298,20 @@ button {
 .error h2 {
   font-size: 2rem;
   margin-bottom: 10px;
+  padding-left: 10px;
 }
 
 .error p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+
 }
 
 .error a {
   font-size: 1rem;
   color: #E0115F;
   text-decoration: none;
+  padding-left: 20px;
 }
 
 .error a:hover {
@@ -291,7 +340,12 @@ button {
 
 
 /* Error */
-
-
-
+.auth-error{
+  color: rgb(255, 0, 0);
+  background-color: rgba(255, 0, 0, 0.2); 
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid red;
+}
 /* Error */

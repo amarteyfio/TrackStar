@@ -27,6 +27,11 @@ const trackerSchema = new Schema({
         type: String,
         required: false,
         default: 'In Progress'
+    },
+    user_id: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     }
     
 },{timestamps: true});

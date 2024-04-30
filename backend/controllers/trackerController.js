@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 
 // get all trackers
 const getAllTrackers = async (req, res) => {
-    const trackers = await Tracker.find({})
+    const user_id = req.user._id;
+    const trackers = await Tracker.find({user_id})
     .sort({createdAt: -1});
     res.status(200).json(trackers);
 }
@@ -29,7 +30,8 @@ const createTracker = async (req, res) => {
     const {title, description} = req.body;
     //add
     try{
-        const tracker = await Tracker.create({title, description})
+        const user_id = req.user._id;
+        const tracker = await Tracker.create({title, description, user_id})
         res.status(200).json(tracker);
     }
     catch(err){
